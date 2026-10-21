@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://darqwm76he5cd"]
+
+[ext_resource type="Script" uid="uid://tvyuk01ikio4" path="res://objects/road/road.gd" id="1_kax6q"]
+
+[sub_resource type="Curve2D" id="Curve2D_kax6q"]
+resource_local_to_scene = true
+
+[sub_resource type="Gradient" id="Gradient_kax6q"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.30394736, 0.69690263)
+colors = PackedColorArray(0.6, 0.6, 0.6, 0.83137256, 0.47, 0.47, 0.47, 0.9882353, 0.64, 0.64, 0.64, 0.78431374)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kax6q"]
+gradient = SubResource("Gradient_kax6q")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+repeat = 1
+
+[node name="Road" type="Node2D" unique_id=23475101]
+z_index = -1
+script = ExtResource("1_kax6q")
+
+[node name="Path3D" type="Path2D" parent="." unique_id=222513787]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_kax6q")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1452892353]
+unique_name_in_owner = true
+texture = SubResource("GradientTexture2D_kax6q")
+texture_mode = 1

@@ -1,0 +1,334 @@
+[gd_scene format=3 uid="uid://dvmwq1rxtdl0l"]
+
+[ext_resource type="Script" uid="uid://by6l6sh8xcqlt" path="res://interface/main-menu/main_menu.gd" id="1_qp5ud"]
+[ext_resource type="Script" uid="uid://bgt0wra30fl3h" path="res://interface/stats-list/stats_list.gd" id="2_1mlly"]
+[ext_resource type="Script" uid="uid://cjkpfuo8s2j1s" path="res://interface/main-menu/leaderboard/leaderboard.gd" id="3_u33xj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp5ud"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_kbbj6"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_u33xj"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_1mlly"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mlly"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0.175, 0.175, 0.175, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbbj6"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u33xj"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.32, 0.32, 0.32, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainMenu" type="Control" unique_id=271386448]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qp5ud")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=758223467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screens" type="TabContainer" parent="CenterContainer" unique_id=1816189621]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 350)
+layout_mode = 2
+current_tab = 0
+tabs_visible = false
+
+[node name="Start" type="MarginContainer" parent="CenterContainer/Screens" unique_id=1684312867]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Screens/Start" unique_id=1376166784]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Screens/Start/VBoxContainer" unique_id=91977821]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Screens/Start/VBoxContainer/VBoxContainer" unique_id=2004704120]
+layout_mode = 2
+
+[node name="Welcome" type="Label" parent="CenterContainer/Screens/Start/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=2002111833]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Welcome Back [User]"
+label_settings = SubResource("LabelSettings_qp5ud")
+autowrap_mode = 3
+
+[node name="Stats" type="Label" parent="CenterContainer/Screens/Start/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=467174590]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "All Time Stats"
+label_settings = SubResource("LabelSettings_qp5ud")
+
+[node name="StatsList" type="ItemList" parent="CenterContainer/Screens/Start/VBoxContainer/VBoxContainer" unique_id=676286593]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 2
+size_flags_horizontal = 8
+max_text_lines = 2
+item_count = 3
+item_0/text = "Wins: 1000"
+item_1/text = "Losses: 21120"
+item_2/text = "W/L Ratio: 1.55"
+script = ExtResource("2_1mlly")
+
+[node name="PlayersOnline" type="Label" parent="CenterContainer/Screens/Start/VBoxContainer/VBoxContainer" unique_id=1926251190]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+text = "1233130 players online"
+label_settings = SubResource("LabelSettings_kbbj6")
+autowrap_mode = 3
+
+[node name="QuickPlay" type="Button" parent="CenterContainer/Screens/Start/VBoxContainer" unique_id=2025459532]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "QuickPlay"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Screens/Start/VBoxContainer" unique_id=1206896355]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CreateLobby" type="Button" parent="CenterContainer/Screens/Start/VBoxContainer/HBoxContainer" unique_id=253712962]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Create Lobby"
+
+[node name="JoinLobby" type="Button" parent="CenterContainer/Screens/Start/VBoxContainer/HBoxContainer" unique_id=196349916]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Join Lobby"
+
+[node name="LobbySearch" type="MarginContainer" parent="CenterContainer/Screens" unique_id=2114722872]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Screens/LobbySearch" unique_id=1397093478]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Screens/LobbySearch/VBoxContainer" unique_id=1751883483]
+layout_mode = 2
+text = "Lobby Browser"
+label_settings = SubResource("LabelSettings_u33xj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Screens/LobbySearch/VBoxContainer" unique_id=1163348084]
+layout_mode = 2
+
+[node name="Refresh" type="Button" parent="CenterContainer/Screens/LobbySearch/VBoxContainer/HBoxContainer" unique_id=166866737]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Refresh"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/Screens/LobbySearch/VBoxContainer" unique_id=1163802255]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ServerContainer" type="VBoxContainer" parent="CenterContainer/Screens/LobbySearch/VBoxContainer/ScrollContainer" unique_id=1705693178]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SearchBack" type="Button" parent="CenterContainer/Screens/LobbySearch/VBoxContainer" unique_id=39229803]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back"
+
+[node name="LobbyCreator" type="MarginContainer" parent="CenterContainer/Screens" unique_id=2084106358]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Screens/LobbyCreator" unique_id=1154349696]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=649127126]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer/HBoxContainer" unique_id=562873485]
+layout_mode = 2
+text = "Create Lobby"
+label_settings = SubResource("LabelSettings_1mlly")
+
+[node name="Rebuild" type="Button" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer/HBoxContainer" unique_id=155300387]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Rebuild
+"
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=560393209]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=1181596811]
+layout_mode = 2
+text = "Map Size"
+
+[node name="MapSize" type="TabBar" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=1627532307]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_1mlly")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_kbbj6")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_u33xj")
+current_tab = 0
+tab_count = 4
+tab_0/title = "Small"
+tab_1/title = "Medium"
+tab_2/title = "Large"
+tab_3/title = "Gigantic"
+
+[node name="Label4" type="Label" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=1609654048]
+layout_mode = 2
+text = "Amount of Cities"
+
+[node name="CityAmount" type="TabBar" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=1536038942]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_1mlly")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_kbbj6")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_u33xj")
+current_tab = 0
+tab_count = 4
+tab_0/title = "Minimum"
+tab_1/title = "Medium"
+tab_2/title = "Maximum"
+tab_3/title = "Insane"
+
+[node name="Label3" type="Label" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=709849908]
+layout_mode = 2
+text = "Density of Road Connections"
+
+[node name="RoadConnections" type="TabBar" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=838055239]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_1mlly")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_kbbj6")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_u33xj")
+current_tab = 0
+tab_count = 4
+tab_0/title = "Minimum"
+tab_1/title = "Medium"
+tab_2/title = "Maximum"
+tab_3/title = "Insane"
+
+[node name="InitLobby" type="Button" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=1877442187]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+text = "Create & Join"
+
+[node name="CreatorBack" type="Button" parent="CenterContainer/Screens/LobbyCreator/VBoxContainer" unique_id=227604019]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "Back"
+
+[node name="Leaderboard" type="MarginContainer" parent="CenterContainer/Screens" unique_id=772302231]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("3_u33xj")
+metadata/_tab_index = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Screens/Leaderboard" unique_id=1702553392]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Screens/Leaderboard/VBoxContainer" unique_id=1663473120]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Screens/Leaderboard/VBoxContainer/HBoxContainer" unique_id=2062491172]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Global Rank"
+label_settings = SubResource("LabelSettings_1mlly")
+
+[node name="MapSize" type="TabBar" parent="CenterContainer/Screens/Leaderboard/VBoxContainer/HBoxContainer" unique_id=1927673792]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_1mlly")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_kbbj6")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_u33xj")
+current_tab = 0
+tab_alignment = 2
+tab_count = 2
+tab_0/title = "Wins"
+tab_1/title = "Losses"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="CenterContainer/Screens/Leaderboard/VBoxContainer" unique_id=2109655665]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Back" type="Button" parent="CenterContainer/Screens/Leaderboard/VBoxContainer" unique_id=1163626966]
+layout_mode = 2
+text = "Back"

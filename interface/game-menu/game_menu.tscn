@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://gg2maf1v7g0c"]
+
+[ext_resource type="Script" uid="uid://cudwlhgxbu5dd" path="res://interface/game-menu/game_menu.gd" id="1_8xmes"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pra6k"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xmes"]
+font_size = 40
+
+[node name="GameMenu" type="Control" unique_id=1296059024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_8xmes")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1297075875]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=756104638]
+layout_mode = 2
+alignment = 2
+
+[node name="TeamList" type="ItemList" parent="MarginContainer/VBoxContainer" unique_id=161395855]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+item_count = 1
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1496872069]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Click to Start"
+
+[node name="Status" type="Label" parent="MarginContainer/VBoxContainer" unique_id=443760521]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Waiting for players to join..."
+horizontal_alignment = 1
+
+[node name="MoveAmountContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=127344817]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer" unique_id=2113705403]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer" unique_id=394736363]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Small" type="PanelContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer4" unique_id=1114987229]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Keybind" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer4/Small" unique_id=948148394]
+layout_mode = 2
+text = "Q"
+label_settings = SubResource("LabelSettings_pra6k")
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer4" unique_id=102117166]
+layout_mode = 2
+size_flags_vertical = 6
+text = "50"
+label_settings = SubResource("LabelSettings_8xmes")
+horizontal_alignment = 1
+
+[node name="TranslatedAmountSmall" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer4" unique_id=1386946279]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer" unique_id=762290821]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Medium" type="PanelContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer3" unique_id=18832092]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Keybind" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer3/Medium" unique_id=1271716186]
+layout_mode = 2
+text = "E"
+label_settings = SubResource("LabelSettings_pra6k")
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer3" unique_id=1138547703]
+layout_mode = 2
+size_flags_vertical = 6
+text = "100"
+label_settings = SubResource("LabelSettings_8xmes")
+horizontal_alignment = 1
+
+[node name="TranslatedAmountMedium" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer3" unique_id=2112574173]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer" unique_id=444317753]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Large" type="PanelContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer2" unique_id=1649609918]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Keybind" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer2/Large" unique_id=1261168692]
+layout_mode = 2
+text = "R"
+label_settings = SubResource("LabelSettings_pra6k")
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer2" unique_id=1572055990]
+layout_mode = 2
+size_flags_vertical = 6
+text = "525"
+label_settings = SubResource("LabelSettings_8xmes")
+horizontal_alignment = 1
+
+[node name="TranslatedAmountLarge" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer2" unique_id=580346844]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer" unique_id=950255554]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Max" type="PanelContainer" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer" unique_id=2115561388]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Keybind" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer/Max" unique_id=1086955350]
+layout_mode = 2
+text = "F"
+label_settings = SubResource("LabelSettings_pra6k")
+horizontal_alignment = 1
+
+[node name="Amount" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer" unique_id=1711972920]
+layout_mode = 2
+size_flags_vertical = 6
+text = "100%"
+label_settings = SubResource("LabelSettings_8xmes")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TranslatedAmountMax" type="Label" parent="MarginContainer/VBoxContainer/MoveAmountContainer/HBoxContainer/VBoxContainer" unique_id=1676698847]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_enabled = true
+text = "125"
+horizontal_alignment = 1
